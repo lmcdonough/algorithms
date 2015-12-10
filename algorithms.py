@@ -121,18 +121,8 @@ def palendrome(string):
 		end_num -= 1
 
 
-def sort_multiple(string):
-	'''Take a string in descending order by occurance of chars then ascending alphabetically.'''
-	counts = {}
-	for letter in string:
-		if not letter in counts:
-			counts[letter] = 1
-		else:
-			counts[letter] += 1
-	return sorted(counts.iteritems(), key=lambda tup: (-tup[1], tup[0]))
 
-
-def sort_multiple_redo(path):
+def count_sort_chars(path):
 	'''Takes a path to a file as input. This reads the file, and returns a dict of each letter with 
 	their corresponding counts in the text. The dict is sorted in descending order by count. If there
 	is a tie, they are then sorted alphabetically.'''
@@ -151,7 +141,6 @@ def sort_multiple_redo(path):
 
 
 
-#Temp Tracker
 class TempTracker(object):
 	'''An interface to input and track temperatures. This allows for insertion of temps,
 	and also has methods to return the min, max, mean, and mode temperatures seen so far. This class favors
