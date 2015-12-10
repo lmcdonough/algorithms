@@ -17,7 +17,7 @@ def stock_profit(prices):
 
 
 
-def product_problem_redo(lst):
+def get_products(lst):
 	'''Takes a list of integers as input and returns a new list of products of every integer in the 
 	list except the integer at that index. Below are two algorithms both of which have a complexity of 
 	O(n) time and O(n) space. We make two passes through the input list and the list we build always
