@@ -235,7 +235,28 @@ def get_permutations(string):
     return permutations
 
 
+def fact_lim(n, lim):
+	'''Takes two positive integers as input.
+	Returns the sum of the factorials of all numbers starting 
+	from n and ending at n - lim from 1 to n.'''
 
+	error_message = 'Values are not positive integers.'
+	
+	if type(n) != int != type(lim):
+		return error_message
+	
+	if n <= 0 or lim <= 0:
+		return error_message
+
+	total = []
+	for i in xrange(n, 0, -1):
+		product = i
+		for index, num in enumerate(xrange(i, 0, -1)):
+			if any([index >= lim-1, num == 1]):
+				total.append(product)
+				break
+			product *= (num - 1)
+	return sum(total)
 
 
 
