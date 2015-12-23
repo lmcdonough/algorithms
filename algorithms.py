@@ -1,4 +1,5 @@
 import random
+import itertools
 
 
 def stock_profit(prices):
@@ -259,8 +260,57 @@ def fact_lim(n, lim):
 	return sum(total)
 
 
+def find_dupe(lst):
+	'''The below function returns any integer that appears more than once in our list.
+	The time complexity of the method is O(n log n)'''
+
+	mylist = sorted(lst)
+	dupe_dict = {}
+	dupes = []
+	
+	for index, val in enumerate(mylist[:-1]):
+		if val == mylist[index+1]:
+			dupes.append(val)
+	return list(set(dupes))
+
+	#or you could do it using a dictionary
+	for val in mylist:
+		if val in dupe_dict:
+			if dupe_dict[val] == 1:
+				dupe_dict.pop(val, None)
+			else:
+				dupe_dict[val] -=1
+		else:
+			dupe_dict[val] = 1
+	return dupe_dict
 
 
+
+def sum_of_ints(lst_of_ints, sum_of_2):
+	'''The below function takes an integer sum_of_2
+	and a list of integers (lst_of_ints) and returns a 
+	boolean indicating whether there are two numbers in 
+	lst_of_ints whose sum equals sum_of_2. Both 
+	solutions have a time complexity of O(n).'''
+
+	# You could use itertools
+	combos = itertools.combinations(lst_of_ints, 2)
+	for int_one, int_two in combos:
+		if int_one + int_two == sum_of_2:
+			return True, int_one, int_two
+	else:
+		return False
+
+	# or you could use a set and simple subtraction.
+	ints_so_far = set()
+
+	for int_one in sum_of_2:
+		matching_int_2 = sum_of_2 - int_one
+		if matching_int_2 in ints_so_far:
+			return True
+		ints_so_far.add(int_one)
+	else:
+		return False
 
 
 
