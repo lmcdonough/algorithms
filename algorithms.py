@@ -314,3 +314,63 @@ def sum_of_ints(lst_of_ints, sum_of_2):
 
 
 
+def rectangle_intersections():
+
+	my_rectangle = {
+		'x': 1,
+		'y': 5,
+		'width': 10,
+		'height': 4
+	}
+
+	my_rectangle2 = {
+		'x': 4,
+		'y': 7,
+		'width': 3,
+		'height': 11,
+	}
+
+
+
+	if my_rectangle['x'] < my_rectangle2['x']:
+		x_intersects = range(my_rectangle2['x'], min(my_rectangle['x']+my_rectangle['width']+1, my_rectangle2['x']+my_rectangle2['width']+1))
+	else:
+		x_intersects = range(my_rectangle['x'], min(my_rectangle2['x']+my_rectangle2['width']+1, my_rectangle['x']+my_rectangle['width']+1))
+
+	if my_rectangle['y'] < my_rectangle2['y']:
+		y_intersects = range(my_rectangle2['y'], min(my_rectangle['y']+my_rectangle['height']+1, my_rectangle2['y']+my_rectangle2['height']+1))
+	else:
+		y_intersects = range(my_rectangle['y'], min(my_rectangle2['y']+my_rectangle2['height']+1, my_rectangle['y']+my_rectangle['height']+1))
+
+
+	inter_dict2 = {'x': min(x_intersects), 'y': min(y_intersects), 'width': len(x_intersects), 'height': len(y_intersects)}
+
+
+	rec1 = []
+	for num in xrange(my_rectangle['x'], my_rectangle['width'] + my_rectangle['x'] + 1):
+		for num2 in xrange(my_rectangle['y'], my_rectangle['height'] + my_rectangle['y'] + 1):
+			rec1.append((num, num2))
+
+	rec2 = []
+	for num in xrange(my_rectangle2['x'], my_rectangle2['width'] + my_rectangle2['x'] + 1):
+		for num2 in xrange(my_rectangle2['y'], my_rectangle2['height'] + my_rectangle2['y'] + 1):
+			rec2.append((num, num2))	
+
+	rec_set = set(rec1) & set(rec2)
+	inter_rect = {}
+
+	inter_rect['x'] = min(rec_set, key=lambda x: x[0])[0]
+	inter_rect['y'] = min(rec_set, key=lambda x: x[1])[1]
+	inter_rect['width'] = max(rec_set, key=lambda x: x[0])[0] - min(rec_set, key=lambda x: x[0])[0] + 1
+	inter_rect['height'] = max(rec_set, key=lambda x: x[1])[1] - min(rec_set, key=lambda x: x[1])[1] + 1
+
+	print 'recdict: {}\n\ninterdict: {}'.format(inter_rect, inter_dict2)
+
+
+
+
+
+
+
+
+
