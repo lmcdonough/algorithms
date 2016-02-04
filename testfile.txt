@@ -1,0 +1,7 @@
+Last week's problem was Word Cloud Data. To handle capitalized words, there were lots of heuristics and approaches we could have used, each with their own strengths and weaknesses. Open-ended questions like this can really separate good engineers from great engineers. 
+
+Good engineers will come up with a solution, but great engineers will come up with several solutions, weigh them carefully, and choose the best solution for the given context. So as you're running practice questions, challenge yourself to keep thinking even after you have a first solution. See how many solutions you can come up with. This will grow your ability to quickly see multiple ways to solve a problem, so you can figure out the best solution. And use the hints and gotchas on each Interview Cake question—they're designed to help you cultivate this skill. 
+
+If you like this week's problem, pass it along with this handy pre-populated tweet. 
+
+Are you interviewing right now? Let me know how I can help. 
