@@ -59,4 +59,12 @@ target/
 # VSCode
 *.vscode.*
 *.vscode/*
+*.history.*
+*.history/*
+*algorithms\.code-workspace.*
+*algorithms\.code-workspace/*
+
+# TRUNK
+*.trunk.*
+*.trunk/*
 
