@@ -6,6 +6,7 @@
 	],
 	"settings": {
 		"editor.tabCompletion": "on",
-		"diffEditor.codeLens": true
+		"diffEditor.codeLens": true,
+		"git-blame.gitWebUrl": ""
 	}
 }
