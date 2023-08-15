@@ -63,6 +63,8 @@ target/
 *.history/*
 *algorithms\.code-workspace.*
 *algorithms\.code-workspace/*
+*.code-workspace.*
+*.code-workspace/*
 
 # TRUNK
 *.trunk.*
