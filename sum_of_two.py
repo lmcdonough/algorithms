@@ -1,3 +1,6 @@
+# import pytest
+
+
 from typing import List
 """
 the below function takes:
@@ -20,26 +23,24 @@ write a function that
 
 
 def sum_of_2(target: int, lst_of_ints: List[int]) -> bool:
-    # define containers, 1 or 2 cursors, temp value holders dicts or arrays
+    """
+    Check if there are two numbers in the list that add up to the target number.
 
-    # create hashset to hold all values seen while iterating
+    Args:
+        target: The target number to find the sum of two numbers.
+        lst_of_ints: A list of integers.
+
+    Returns:
+        True if there are two numbers in the list that add up to the target number, False otherwise.
+    """
     seen = set()
 
-    # ITERATE USING 1 OR TWO POINTERS, ENUMERATE OR DON'T
-    # iterate through lst_of_ints, enumerate it so we have the index as well
     for index, value in enumerate(lst_of_ints):
-        # THE MATH
-        # explained at bottom of function
-        if target - value in seen:  # THE TRUTH: the <2nd number> is in the set
-            # THE MATH
+        if target - value in seen:
             return True
-        else:  # THE FALSE: the <2nd number> is not in the set
-            # THE MATH
-            # add the current iterations value to the hash set
+        else:
             seen.add(value)
 
-    # ### FORMAT, AND/OR DO ANY MATH OPERATIONS TO GENERATE THE RETURN ITEM WHEN DONE ITERATING ####
-    # no 2 numbers add to the target so it keeps iterating until the end of the array, where i explicitely return False
     return False
 
 
@@ -48,4 +49,5 @@ def sum_of_2(target: int, lst_of_ints: List[int]) -> bool:
 - it ends up looking like this: target - <1st number> = <2nd number>
 - we have the target already, and at each iterating, the value will be the first number
 - the second number we check our seen hash set which contains all the numbers we've seen so far
+- the second number we check our seen hash set which contains all the numbers weve seen so far
 """
