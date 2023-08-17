@@ -44,4 +44,3 @@ class Solution:
                         left_pointer += 1
 
         return res
-
