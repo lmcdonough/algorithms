@@ -4,7 +4,7 @@ import itertools
 
 def stock_profit(prices):
 	'''Takes a list of stock prices and returns the highest profit or minimum
-	loss that can be achieved from said prices. It assumes the indices of the list 
+	loss that can be achieved from said prices. It assumes the indices of the list
 	are time in minutes, for example prices[0] is the opening price. The complexity of
 	this function is O(n) time and O(1) space because we only loop through the list once.'''
 
@@ -19,8 +19,8 @@ def stock_profit(prices):
 
 
 def get_products(lst):
-	'''Takes a list of integers as input and returns a new list of products of every integer in the 
-	list except the integer at that index. Below are two algorithms both of which have a complexity of 
+	'''Takes a list of integers as input and returns a new list of products of every integer in the
+	list except the integer at that index. Below are two algorithms both of which have a complexity of
 	O(n) time and O(n) space. We make two passes through the input list and the list we build always
 	has the same length as the input list.'''
 
@@ -35,21 +35,6 @@ def get_products(lst):
 		remaining_product = reduce(lambda x,y: x*y, [x for x in lst[index:]])
 		new_list.append(temp_product*remaining_product)
 		temp_product *= val
-
-
-
-def highest_product(lst):
-	'''Takes a list of integers as input and returns the highest possible product of
-	three of the integers in the list. The complexity of the algorithm is O(n) time and 
-	O(1) space.'''
-
-	if len(lst) < 3:
-		raise Exception('Less than 3 values in list.')
-
-	highest_product_of_three = lst[0]*lst[1]*lst[2]
-	highest_product_of_two = lst[0]*lst[1]
-	lowest_product_of_two = lst[0]*lst[1]
-	highest_num = lst[0]
 	lowest_num = lst[0]
 
 	for num in lst[2:]:
@@ -66,7 +51,7 @@ times = [(0,1),(3,5),(4,8),(10,12),(9,10)]
 
 def condense_meetings(times):
 	'''Takes a list of 2 integer tuples as input. The inputs represent a meeting start time,
-	and end time. They are represented as the 30 minute blocks passed 9:00am. This condenses 
+	and end time. They are represented as the 30 minute blocks passed 9:00am. This condenses
 	all the meetings and returns a new schedule in the same format
 	to show when everyone is available. The complexity is O(n lg n) time and (n) space. If the incoming list
 	was already sorted it would be possible to reduce the runtime to O(n) time.'''
@@ -91,13 +76,13 @@ string = "Sometimes (when I nest them (my parentheticals) too much (like this (a
 
 
 def parentheticals(string, paren):
-	'''Takes a string, and index of an opening parenthesis. This then returns 
+	'''Takes a string, and index of an opening parenthesis. This then returns
 	the index of the corresponding closing parenthesis. Using the example above and the opening
-	parenthesis index of 10, this would return 79. The complexity is O(n) time and O(1) space where 
+	parenthesis index of 10, this would return 79. The complexity is O(n) time and O(1) space where
 	n is the length of the string.'''
 
 	open_parens = 0
-	
+
 	for index, char in enumerate(string[paren:]):
 		if char == '(':
 			open_parens += 1
@@ -124,7 +109,7 @@ def palendrome(string):
 
 
 def count_sort_chars(path):
-	'''Takes a path to a file as input. This reads the file, and returns a dict of each letter with 
+	'''Takes a path to a file as input. This reads the file, and returns a dict of each letter with
 	their corresponding counts in the text. The dict is sorted in descending order by count. If there
 	is a tie, they are then sorted alphabetically.'''
 
@@ -165,7 +150,7 @@ class TempTracker(object):
 		if self.temp_counts[temp] > self.max_count:
 			self.max_count = self.temp_counts[temp]
 			self.mode = temp
-		
+
 
 	def get_max(self):
 		return self.max_temp
@@ -181,7 +166,7 @@ class TempTracker(object):
 
 
 def fibonaccii(val):
-	'''A simple function that takes an integer as input and returns a generator object. 
+	'''A simple function that takes an integer as input and returns a generator object.
 	The object will iterate over fibonaccii numbers until it reaches you input integer.'''
 
 	final_num = 0
@@ -193,13 +178,13 @@ def fibonaccii(val):
 bracket_string = '(()){}[()]'
 
 def brackets_stack(bracket_string):
-	'''Takes a string composed of parens and brackets. It then mimics a stack to 
+	'''Takes a string composed of parens and brackets. It then mimics a stack to
 	identify whether or not the string of parens and brackets are balanced.'''
 
 	brackets = []
 	opens = '([{'
 	close = ')]}'
-    
+
 	for char in bracket_string:
 		if char in opens:
 			brackets.append(opens.index(char))
@@ -213,7 +198,7 @@ def brackets_stack(bracket_string):
 	else:
 		return True
 
-        
+
 def get_permutations(string):
     '''A recursive function that takes a string as input and returns a set of all possible permutations
     of that string.'''
@@ -238,14 +223,14 @@ def get_permutations(string):
 
 def fact_lim(n, lim):
 	'''Takes two positive integers as input.
-	Returns the sum of the factorials of all numbers starting 
+	Returns the sum of the factorials of all numbers starting
 	from n and ending at n - lim from 1 to n.'''
 
 	error_message = 'Values are not positive integers.'
-	
+
 	if type(n) != int != type(lim):
 		return error_message
-	
+
 	if n <= 0 or lim <= 0:
 		return error_message
 
@@ -267,7 +252,7 @@ def find_dupe(lst):
 	mylist = sorted(lst)
 	dupe_dict = {}
 	dupes = []
-	
+
 	for index, val in enumerate(mylist[:-1]):
 		if val == mylist[index+1]:
 			dupes.append(val)
@@ -288,9 +273,9 @@ def find_dupe(lst):
 
 def sum_of_ints(lst_of_ints, sum_of_2):
 	'''The below function takes an integer sum_of_2
-	and a list of integers (lst_of_ints) and returns a 
-	boolean indicating whether there are two numbers in 
-	lst_of_ints whose sum equals sum_of_2. Both 
+	and a list of integers (lst_of_ints) and returns a
+	boolean indicating whether there are two numbers in
+	lst_of_ints whose sum equals sum_of_2. Both
 	solutions have a time complexity of O(n).'''
 
 	# You could use itertools
@@ -354,7 +339,7 @@ def rectangle_intersections():
 	rec2 = []
 	for num in xrange(my_rectangle2['x'], my_rectangle2['width'] + my_rectangle2['x'] + 1):
 		for num2 in xrange(my_rectangle2['y'], my_rectangle2['height'] + my_rectangle2['y'] + 1):
-			rec2.append((num, num2))	
+			rec2.append((num, num2))
 
 	rec_set = set(rec1) & set(rec2)
 	inter_rect = {}
