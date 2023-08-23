@@ -8,6 +8,7 @@
 		"editor.tabCompletion": "on",
 		"diffEditor.codeLens": true,
 		"git-blame.gitWebUrl": "",
-		"github.copilot.inlineSuggest.enable": false
+		"github.copilot.inlineSuggest.enable": true,
+		"AllAutocomplete.showCurrentDocument": false
 	}
 }
