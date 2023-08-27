@@ -13,3 +13,6 @@ pytest = "^7.4.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.env]
+PATH = "PATH:/Users/levi/algorithms/copy_3/:/Users/levi/algorithms/copy_3/tests"
